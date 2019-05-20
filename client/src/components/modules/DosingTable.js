@@ -27,8 +27,8 @@ function createData(name, hours, actualDose, testedConc, recDose, predConc) {
 }
 
 const rows = [
-  createData('05/20/2019', '2 Hours', '20 mg once daily', '314 mcg/L', '15 mg once daily', '275 mcg/L'),
-  createData('05/20/2019', '12 Hours', '20 mg once daily', '144 mcg/L', '15 mg once daily', '132 mcg/L'),
+  createData('05/18/2019', '2 Hours', '20 mg once daily', '314 mcg/L', '15 mg once daily', '275 mcg/L'),
+  createData('05/18/2019', '12 Hours', '20 mg once daily', '144 mcg/L', '15 mg once daily', '132 mcg/L'),
   createData('11/14/2018', '2 Hours', '20 mg once daily', '299 mcg/L', '15 mg once daily', '271 mcg/L'),
   createData('11/14/2018', '12 Hours', '20 mg once daily', '142 mcg/L', '15 mg once daily', '130 mcg/L'),
 ];
@@ -39,7 +39,7 @@ function SimpleTable(props) {
   return (
     <Paper className={classes.root}>
       <Typography variant="h6" id="modal-title">
-        This information was last updated 05/19/2019 at 2:47am from the CDW
+        This information was last updated 05/19/2019 at 2:47am
       </Typography>
       <Table className={classes.table}>
         <TableHead>
