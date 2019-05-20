@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 
 export const PatientContext = React.createContext({});
 
+export const defaultSettings = {
+    currentPatient: {}
+}
+
 export const PatientProvider = ({ children }) => {
     const [patient, setPatient] = useState({})
     return (
         <PatientContext.Provider value={ [patient, setPatient] }>
-            {children}
+            { children }
         </PatientContext.Provider>
     )
 }
