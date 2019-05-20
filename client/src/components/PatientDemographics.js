@@ -34,13 +34,13 @@ const PatientDemographics = () => {
                     <ListItemText primary="Sex : M" />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Weight : 5'8" />
+                    <ListItemText primary="Weight : 210 lbs" />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Height : 210" />
+                    <ListItemText primary="Height : 5'8&quot;" />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="BMI : 25" />
+                    <ListItemText primary="BMI : 39" />
                 </ListItem>
                 <Divider />
                 <ListItem>
