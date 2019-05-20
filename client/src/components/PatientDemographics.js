@@ -25,7 +25,7 @@ const PatientDemographics = () => {
                     />
                 </FormControl>
                 <ListItem>
-                    <ListItemText secondary="This information was last updated 05/19/2019 at 2:47am from the CDW" />
+                    <ListItemText secondary="This information was last updated 05/19/2019 at 2:47am" />
                 </ListItem>
                 <ListItem>
                     <ListItemText primary="Age : 87" />
@@ -47,7 +47,7 @@ const PatientDemographics = () => {
                     <ListItemText primary="Drug : Rivaroxaban (Xarelto)" />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Indication : Reduces the risk of stroke in nonvalvular atrial fibrillation" />
+                    <ListItemText primary="Indication : Reduces the risk of ischemic stroke in nonvalvular atrial fibrillation" />
                 </ListItem>
                 <ListItem>
                     <ListItemText primary="Inpatient Dose : 20 mg taken once daily" />
