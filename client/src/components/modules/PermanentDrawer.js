@@ -12,7 +12,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-const drawerWidth = 240;
+const drawerWidth = 340;
 
 const styles = theme => ({
   root: {
@@ -60,8 +60,8 @@ function PermanentDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <DosageWarning />
         <DrugMonitoringTabs />
+        <DosageWarning />
       </main>
     </div>
   );
