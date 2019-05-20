@@ -8,9 +8,7 @@ export const defaultSettings = {
 
 export const PatientProvider = ({ children }) => {
     const [patient, setPatient] = useState({})
-    return (
-        <PatientContext.Provider value={ [patient, setPatient] }>
+    return <PatientContext.Provider value={ [patient, setPatient] }>
             { children }
         </PatientContext.Provider>
-    )
 }
