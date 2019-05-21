@@ -1,12 +1,13 @@
 import React from 'react';
 import Dashboard from './Dashboard';
+import { PatientProvider } from './contexts/PatientContext';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+      <PatientProvider>
+        <Dashboard />
+      </PatientProvider>
   );
 }
 
