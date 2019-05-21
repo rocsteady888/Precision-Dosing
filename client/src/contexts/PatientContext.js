@@ -9,6 +9,12 @@ export const defaultPatient = {
         weight: '210',
         height: "5'8",
         bmi: '39.1',
+        currentMedications: [
+            {
+                genericName: '',
+                brandName: '',
+            }
+        ]
 }
 
 export const PatientProvider = ({ children }) => {
