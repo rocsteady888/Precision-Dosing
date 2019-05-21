@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { PatientContext } from '../contexts/PatientContext';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -9,38 +10,41 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
 import Search from '@material-ui/icons/Search';
 
-const PatientDemographics = () => {
+const PatientDemographics = props => {
+    const [currentPatient, setCurrentPatient] = useContext(PatientContext);
     return (
         <React.Fragment>
             <List>
-                <FormControl>
-                    <InputLabel htmlFor="input-with-icon-adornment">Patient Search</InputLabel>
-                    <Input
-                        id="input-with-icon-adornment"
-                        startAdornment={
-                            <InputAdornment position="start">
-                                <Search />
-                            </InputAdornment>
-                        }
-                    />
-                </FormControl>
+                <ListItem>
+                    <FormControl>
+                        <InputLabel htmlFor="input-with-icon-adornment">Patient Search</InputLabel>
+                        <Input
+                            id="input-with-icon-adornment"
+                            startAdornment={
+                                <InputAdornment position="start">
+                                    <Search />
+                                </InputAdornment>
+                            }
+                        />
+                    </FormControl>
+                </ListItem>
                 <ListItem>
                     <ListItemText secondary="This information was last updated 05/19/2019 at 2:47am" />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Age : 87" />
+                    <ListItemText primary={"Age : " + currentPatient.age} />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Sex : M" />
+                    <ListItemText primary={"Sex : " + currentPatient.sex} />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Weight : 210 lbs" />
+                    <ListItemText primary={"Weight : " + currentPatient.weight} />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="Height : 5'8&quot;" />
+                    <ListItemText primary={"Height : " + currentPatient.height} />
                 </ListItem>
                 <ListItem>
-                    <ListItemText primary="BMI : 39" />
+                    <ListItemText primary={"BMI : " + currentPatient.bmi} />
                 </ListItem>
                 <Divider />
                 <ListItem>
