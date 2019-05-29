@@ -1,17 +1,19 @@
 import React, { useContext } from 'react';
 import { PatientContext } from '../contexts/PatientContext';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
+import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
 import Search from '@material-ui/icons/Search';
 
 const PatientDemographics = props => {
-    const [currentPatient, setCurrentPatient] = useContext(PatientContext);
+    const [currentPatient] = useContext(PatientContext);
     return (
         <React.Fragment>
             <List>
@@ -30,6 +32,7 @@ const PatientDemographics = props => {
                 </ListItem>
                 <ListItem>
                     <ListItemText secondary="This information was last updated 05/19/2019 at 2:47am" />
+                    <Button variant="primary" color="primary" >Update</Button>
                 </ListItem>
                 <ListItem>
                     <ListItemText primary={"Age : " + currentPatient.age} />
@@ -46,19 +49,34 @@ const PatientDemographics = props => {
                 <ListItem>
                     <ListItemText primary={"BMI : " + currentPatient.bmi} />
                 </ListItem>
-                <Divider />
-                <ListItem>
-                    <ListItemText primary="Drug : Rivaroxaban (Xarelto)" />
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="Indication : Reduces the risk of ischemic stroke in nonvalvular atrial fibrillation" />
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="Inpatient Dose : 20 mg taken once daily" />
-                </ListItem>
-                <ListItem>
-                    <ListItemText primary="Outpatient Dose : 20 mg taken once daily" />
-                </ListItem>
+            </List>
+            <Divider />
+            <Typography variant="h6" style={{ margin: '15px',}} >Current Medications</Typography>
+            <List>
+                {currentPatient.currentMedications.map(medication => {
+                    return (
+                        <React.Fragment>
+                            <ListItem>
+                                <ListItemText 
+                                    primary={medication.genericName + ',  ' + medication.brandName + '™'} 
+                                    secondary={'indication: ' + medication.indication}
+                                />
+                            </ListItem>
+                            <ListItem>
+                                {
+                                    medication.precisionDosingAvailable
+                                        ?
+                                        <Button fullwidth style={{ color: 'white', background: 'linear-gradient(to right bottom, #ef6c00, #ff4081)' }}>
+                                            Precision Dosing
+                                        </Button>
+                                        :
+                                        null
+                                } 
+                            </ListItem>
+                            <Divider />
+                        </React.Fragment>
+                    )}
+                )}
             </List>
         </React.Fragment>
     )
