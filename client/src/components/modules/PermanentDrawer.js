@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
 import PatientDemographics from '../PatientDemographics';
 import DosageWarning from './DosageWarning';
 import DrugMonitoringTabs from './DugMonitoringTabs';
+
+import { PrecisionDosingContext } from '../../contexts/PrecisionDosingContext';
 
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -37,6 +39,7 @@ const styles = theme => ({
 
 function PermanentDrawer(props) {
   const { classes } = props;
+  const [showDosing] = useContext(PrecisionDosingContext);
 
   return (
     <div className={classes.root}>
@@ -60,8 +63,16 @@ function PermanentDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <DrugMonitoringTabs />
-        <DosageWarning />
+        {
+          showDosing
+          ?
+          <React.Fragment>
+            <DrugMonitoringTabs />
+            <DosageWarning />
+          </React.Fragment>
+          :
+          null
+        }
       </main>
     </div>
   );
