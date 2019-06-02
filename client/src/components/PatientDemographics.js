@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
+
 import { PatientContext } from '../contexts/PatientContext';
+import { PrecisionDosingContext } from '../contexts/PrecisionDosingContext';
+
 import List from '@material-ui/core/List';
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
@@ -14,6 +17,7 @@ import Search from '@material-ui/icons/Search';
 
 const PatientDemographics = props => {
     const [currentPatient] = useContext(PatientContext);
+    const [, setShowDosing] = useContext(PrecisionDosingContext);
     return (
         <React.Fragment>
             <List>
@@ -66,7 +70,14 @@ const PatientDemographics = props => {
                                 {
                                     medication.precisionDosingAvailable
                                         ?
-                                        <Button fullwidth style={{ color: 'white', background: 'linear-gradient(to right bottom, #ef6c00, #ff4081)' }}>
+                                        <Button 
+                                        fullwidth 
+                                        style={{ 
+                                            color: 'white', 
+                                            background: 'linear-gradient(to right bottom, #ef6c00, #ff4081)' 
+                                            }}
+                                        onClick={()=>setShowDosing(true)}
+                                        >
                                             Precision Dosing
                                         </Button>
                                         :
