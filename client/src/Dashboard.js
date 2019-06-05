@@ -1,8 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import React, { useContext } from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 
-import PermanentDrawer from './components/modules/PermanentDrawer';
+import { UserContext } from './contexts/UserContext';
+
+import Landing from './Landing'
+import PermanentDrawer from './components/modules/PermanentDrawer'
 
 const styles = theme => ({
   root: {
@@ -15,18 +18,26 @@ const styles = theme => ({
   },
 });
 
-function FullWidthGrid(props) {
-  const { classes } = props;
+const FullWidthGrid = props => {
+  const { classes } = props
+  const [user] = useContext(UserContext)
 
   return (
     <div className={classes.root}>
-        <PermanentDrawer />
+    {
+      user
+      ?
+      <PermanentDrawer />
+      :
+      <Landing />
+    }
+      
     </div>
-  );
+  )
 }
 
 FullWidthGrid.propTypes = {
   classes: PropTypes.object.isRequired,
-};
+}
 
-export default withStyles(styles)(FullWidthGrid);
+export default withStyles(styles)(FullWidthGrid)
