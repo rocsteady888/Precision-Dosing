@@ -1,12 +1,14 @@
 import React from 'react';
 import Dashboard from './Dashboard';
 import { PatientProvider } from './contexts/PatientContext';
+import { UserProvider } from './contexts/UserContext';
 import { PrecisionDosingProvider } from './contexts/PrecisionDosingContext';
 import { MedicationProvider } from './contexts/MedicationContext';
 import './App.css';
 
 function App() {
   return (
+    <UserProvider>
       <PatientProvider>
         <PrecisionDosingProvider>
           <MedicationProvider>
@@ -14,6 +16,7 @@ function App() {
           </MedicationProvider>
         </PrecisionDosingProvider>
       </PatientProvider>
+    </UserProvider>
   );
 }
 
