@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import Search from '@material-ui/icons/Search';
 
-const PatientDemographics = props => {
+const PatientDemographics = () => {
     const [currentPatient] = useContext(PatientContext);
     const [, setShowDosing] = useContext(PrecisionDosingContext);
     return (
