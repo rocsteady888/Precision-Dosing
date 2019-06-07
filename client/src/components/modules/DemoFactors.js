@@ -21,14 +21,15 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData(name, hours, actualDose, testedConc, recDose, predConc) {
+function createData(age, sex, race, bmi, leanMass) {
   id += 1;
-  return { id, name, hours, actualDose, testedConc, recDose, predConc };
+  return { id, age, sex, race, bmi, leanMass };
 }
 
 const rows = [
   createData('Age', '87', '66'),
   createData('Sex', 'M', 'F'),
+  createData('Race', 'white', 'white'),
   createData('BMI', '39.1', '30.9'),
   createData('Lean Body Mass', '140', 'unknown'),
 ];
@@ -53,11 +54,12 @@ function SimpleTable(props) {
           {rows.map(row => (
             <TableRow key={row.id}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.age}
               </TableCell>
-              <TableCell>{row.hours}</TableCell>
-              <TableCell>{row.actualDose}</TableCell>
-              <TableCell>{row.testedConc}</TableCell>
+              <TableCell>{row.sex}</TableCell>
+              <TableCell>{row.race}</TableCell>
+              <TableCell>{row.bmi}</TableCell>
+              <TableCell>{row.leanMass}</TableCell>
             </TableRow>
           ))}
         </TableBody>
