@@ -6,6 +6,7 @@ export const defaultPatient = {
         pid: '1',
         age: '87',
         sex: 'M',
+        race: 'white',
         weight: '210',
         height: "5'8",
         bmi: '39.1',
