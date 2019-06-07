@@ -36,7 +36,7 @@ const PatientDemographics = () => {
                 </ListItem>
                 <ListItem>
                     <ListItemText secondary="This information was last updated 05/19/2019 at 2:47am" />
-                    <Button variant="primary" color="primary" >Update</Button>
+                    <Button color="primary" >Update</Button>
                 </ListItem>
                 <ListItem>
                     <ListItemText primary={"Age : " + currentPatient.age} />
@@ -59,7 +59,7 @@ const PatientDemographics = () => {
             <List>
                 {currentPatient.currentMedications.map(medication => {
                     return (
-                        <React.Fragment>
+                        <div key={medication.id}>
                             <ListItem>
                                 <ListItemText 
                                     primary={medication.genericName + ',  ' + medication.brandName + '™'} 
@@ -71,7 +71,7 @@ const PatientDemographics = () => {
                                     medication.precisionDosingAvailable
                                         ?
                                         <Button 
-                                        fullwidth 
+                                        fullwidth="true"
                                         style={{ 
                                             color: 'white', 
                                             background: 'linear-gradient(to right bottom, #ef6c00, #ff4081)' 
@@ -85,7 +85,7 @@ const PatientDemographics = () => {
                                 } 
                             </ListItem>
                             <Divider />
-                        </React.Fragment>
+                        </div>
                     )}
                 )}
             </List>
