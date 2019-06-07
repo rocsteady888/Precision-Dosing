@@ -45,6 +45,9 @@ const PatientDemographics = () => {
                     <ListItemText primary={"Sex : " + currentPatient.sex} />
                 </ListItem>
                 <ListItem>
+                    <ListItemText primary={"Race : " + currentPatient.race} />
+                </ListItem>
+                <ListItem>
                     <ListItemText primary={"Weight : " + currentPatient.weight} />
                 </ListItem>
                 <ListItem>
