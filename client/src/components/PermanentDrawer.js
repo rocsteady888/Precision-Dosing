@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 
-import PatientDemographics from '../PatientDemographics';
+import PatientDemographics from './PatientDemographics';
 import DosageWarning from './DosageWarning';
 import DrugMonitoringTabs from './DugMonitoringTabs';
 
-import { PrecisionDosingContext } from '../../contexts/PrecisionDosingContext';
+import { PrecisionDosingContext } from '../contexts/PrecisionDosingContext';
 
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';

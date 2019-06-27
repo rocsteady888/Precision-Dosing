@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
-import ChangeDoseModal from '../ChangeDoseModal';
+import ChangeDoseModal from './modals/ChangeDoseModal';
 
 const action = (
   <ChangeDoseModal />
