@@ -46,7 +46,10 @@ class SimpleTabs extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar 
+        style={{
+          marginTop: "35px",
+        }}position="static">
           <Tabs value={value} onChange={this.handleChange}>
             <Tab label="Demographic Factors" />
             <Tab label="Dosing Table" />
