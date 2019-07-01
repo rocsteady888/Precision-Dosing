@@ -17,7 +17,7 @@ export default function SideNav() {
     <React.Fragment>
       <List
         style={{
-          marginTop: "35px",
+          marginTop: "100px",
         }}
       >
         <ListItem>
