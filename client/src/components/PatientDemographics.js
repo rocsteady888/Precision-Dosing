@@ -24,7 +24,7 @@ const PatientDemographics = () => {
     <React.Fragment>
       <List
         style={{
-          marginTop: "35px",
+          marginTop: "55px",
         }}
       >
         <ListItem>
