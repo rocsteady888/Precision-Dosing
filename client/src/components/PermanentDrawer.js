@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import PropTypes from "prop-types";
 
 import SideNav from "./SideNav";
-import Medications from "./Medications";
+import MedicationTabs from "./MedicationTabs";
 
 import { PatientContext } from "../contexts/PatientContext";
 
-import { withStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles';
 import Drawer from "@material-ui/core/Drawer";
 import AppBar from "@material-ui/core/AppBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -16,29 +15,33 @@ import Grid from "@material-ui/core/Grid";
 
 const drawerWidth = 340;
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    display: "flex"
+    display: 'flex',
+  },
+  card: {
+    minWidth: 275,
   },
   appBar: {
-    zIndex: theme.zIndex.drawer + 1
+    zIndex: theme.zIndex.drawer + 1,
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
   },
   content: {
+    marginTop: 100,
     flexGrow: 1,
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing(3),
   },
-  toolbar: theme.mixins.toolbar
-});
+  toolbar: theme.mixins.toolbar,
+}));
 
-function PermanentDrawer(props) {
-  const { classes } = props;
+function PermanentDrawer() {
+  const classes = useStyles();
   const [currentPatient] = useContext(PatientContext);
 
   return (
@@ -70,18 +73,20 @@ function PermanentDrawer(props) {
                 </Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subheading" color="inherit" noWrap>
+                <Typography variant="subtitle1" color="inherit" noWrap>
                   ID: {currentPatient.id}
                 </Typography>
-                <Typography variant="subheading" color="inherit" noWrap>
+              </Grid>
+              <Grid item xs={2}>
+                <Typography variant="subtitle1" color="inherit" noWrap>
                   PCP: {currentPatient.pcp ? currentPatient.pcp : "none"}
                 </Typography>
               </Grid>
               <Grid item xs={2}>
-                <Typography variant="subheading" color="inherit" noWrap>
+                <Typography variant="subtitle1" color="inherit" noWrap>
                   Allergies:
                 </Typography>
-                <Typography variant="subheading" color="inherit" noWrap>
+                <Typography variant="subtitle1" color="inherit" noWrap>
                   {currentPatient.allergies ? currentPatient.allergies : "NKDA"}
                 </Typography>
               </Grid>
@@ -101,14 +106,9 @@ function PermanentDrawer(props) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Medications />
+        <MedicationTabs />
       </main>
     </div>
   );
 }
-
-PermanentDrawer.propTypes = {
-  classes: PropTypes.object.isRequired
-};
-
-export default withStyles(styles)(PermanentDrawer);
+export default PermanentDrawer;
