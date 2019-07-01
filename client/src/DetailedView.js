@@ -1,43 +1,75 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
 
-import { UserContext } from './contexts/UserContext';
+import PatientDemographics from './components/PatientDemographics';
+import DrugMonitoringTabs from './components/DugMonitoringTabs';
 
-import Landing from './Landing'
-import PermanentDrawer from './components/PermanentDrawer'
+import { PrecisionDosingContext } from './contexts/PrecisionDosingContext';
+
+import { withStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+
+const drawerWidth = 450;
 
 const styles = theme => ({
   root: {
+    display: 'flex',
+  },
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+  },
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  content: {
     flexGrow: 1,
+    padding: theme.spacing.unit * 3,
   },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
+  toolbar: theme.mixins.toolbar,
 });
 
-const FullWidthGrid = props => {
-  const { classes } = props
-  const [user] = useContext(UserContext)
+function PermanentDrawer(props) {
+  const { classes } = props;
+  const [showDosing] = useContext(PrecisionDosingContext);
 
   return (
     <div className={classes.root}>
-    {
-      user
-      ?
-      <PermanentDrawer />
-      :
-      <Landing />
-    }
-      
+      <CssBaseline />
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <Typography variant="h6" color="inherit" noWrap>
+            Precision Dosing
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={classes.drawer}
+        variant="permanent"
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.toolbar} />
+        <PatientDemographics />
+      </Drawer>
+      <main className={classes.content}>
+        <div className={classes.toolbar} />
+          <DrugMonitoringTabs />
+      </main>
     </div>
-  )
+  );
 }
 
-FullWidthGrid.propTypes = {
+PermanentDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
-}
+};
 
-export default withStyles(styles)(FullWidthGrid)
+export default withStyles(styles)(PermanentDrawer);

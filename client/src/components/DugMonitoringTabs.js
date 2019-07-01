@@ -70,9 +70,9 @@ class SimpleTabs extends React.Component {
         }
         {value === 3 && <TabContainer>
             <ReviewCard
-              title={"Theraputic Range"}
+              title={"Therapeutic Range"}
               image={theraputicRangeImg}
-              mediaTitle={"theraputic range"}
+              mediaTitle={"therapeutic range"}
             />
           </TabContainer>
         }
