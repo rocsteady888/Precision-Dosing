@@ -64,18 +64,6 @@ export const defaultMedications = {
           frequency: 'Take 2 tablets (1000 mg) by mouth twice daily',
           precisionDosingAvailable: false,
       },
-      {
-          id: '2',
-          genericName: 'rivaroxaban',
-          brandName: 'Xarelto',
-          dose: 5,
-          doseUnits: 'mg',
-          medicationForm: 'tablet',
-          route: 'oral',
-          endDate: null,
-          frequency: 'Take 1 tablet (5mg) by mouth once daily',
-          precisionDosingAvailable: true,
-      },
   ],
   lastUpdated: '05/19/2019 at 2:47am'
 }

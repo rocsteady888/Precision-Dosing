@@ -44,12 +44,10 @@ export default function SimpleTabs() {
         <Tabs value={value} onChange={handleChange}>
           <Tab label="Medication List" />
           <Tab label="Add Medication" />
-          <Tab label="Item Three" />
         </Tabs>
       </AppBar>
       {value === 0 && <TabContainer><MedicationList /></TabContainer>}
       {value === 1 && <TabContainer><AddMedication /></TabContainer>}
-      {value === 2 && <TabContainer>Item Three</TabContainer>}
     </div>
   );
 }
