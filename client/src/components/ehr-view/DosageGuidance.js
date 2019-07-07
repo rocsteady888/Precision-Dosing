@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
@@ -8,7 +9,7 @@ const action = (
     <Button color="secondary" size="small">
       Select Dose
     </Button>
-    <Button color="secondary" size="small">
+    <Button color="secondary" size="small" component={Link} to="/detailed-view">
       More Information
     </Button>
   </React.Fragment>

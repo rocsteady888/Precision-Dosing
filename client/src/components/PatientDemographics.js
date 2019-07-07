@@ -22,11 +22,7 @@ const PatientDemographics = () => {
   const [, setShowDosing] = useContext(PrecisionDosingContext);
   return (
     <React.Fragment>
-      <List
-        style={{
-          marginTop: "55px",
-        }}
-      >
+      <List>
         <ListItem>
           <FormControl>
             <InputLabel htmlFor="input-with-icon-adornment">

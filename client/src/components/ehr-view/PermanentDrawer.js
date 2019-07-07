@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import SideNav from "./SideNav";
 import MedicationTabs from "./MedicationTabs";
 
-import { PatientContext } from "../contexts/PatientContext";
+import { PatientContext } from "../../contexts/PatientContext";
 
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from "@material-ui/core/Drawer";
@@ -13,7 +13,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 
-const drawerWidth = 340;
+const drawerWidth = 260;
 
 const useStyles = makeStyles(theme => ({
   root: {

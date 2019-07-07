@@ -1,43 +1,30 @@
-import React, { useContext } from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import React from 'react';
 
-import { UserContext } from './contexts/UserContext';
+import Navbar from './components/navigation/Navbar';
+import PatientDemoForm from './components/web-view/PatientDemoForm';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
 
-import Landing from './Landing'
-import PermanentDrawer from './components/PermanentDrawer'
-
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
   },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-});
+  demoFormContainer: {
+    marginTop: 50
+  }
+}));
 
-const FullWidthGrid = props => {
-  const { classes } = props
-  const [user] = useContext(UserContext)
+export default function FullWidthGrid() {
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
-    {
-      user
-      ?
-      <PermanentDrawer />
-      :
-      <Landing />
-    }
-      
+    <Navbar />
+      <Grid container justify="center" alignItems="center" spacing={3} className={classes.demoFormContainer} >
+        <Grid item xs={12} sm={6}>
+          <PatientDemoForm />
+        </Grid>
+      </Grid>
     </div>
-  )
+  );
 }
-
-FullWidthGrid.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
-
-export default withStyles(styles)(FullWidthGrid)

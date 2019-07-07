@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { UserContext } from './contexts/UserContext';
 
 import Landing from './Landing'
-import PermanentDrawer from './components/PermanentDrawer'
+import PermanentDrawer from './components/ehr-view/PermanentDrawer'
 
 const styles = theme => ({
   root: {
