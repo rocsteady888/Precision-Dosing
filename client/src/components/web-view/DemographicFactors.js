@@ -1,7 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -9,16 +7,17 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const styles = theme => ({
+
+const useStyles = makeStyles(theme => ({
   root: {
-    width: 650,
+    width: '100%',
     marginTop: theme.spacing(3),
     overflowX: 'auto',
   },
   table: {
-    minWidth: 700,
+    minWidth: 650,
   },
-});
+}));
 
 let id = 0;
 function createData(age, sex, race, bmi, leanMass) {
@@ -34,14 +33,11 @@ const rows = [
   createData('Lean Body Mass', '140', 'unknown'),
 ];
 
-function SimpleTable(props) {
-  const { classes } = props;
+export default function DemographicFactors() {
+  const classes = useStyles();
 
   return (
     <Paper className={classes.root}>
-      <Typography variant="h6" id="modal-title">
-        This information was last updated 05/19/2019 at 2:47am
-      </Typography>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
@@ -67,9 +63,3 @@ function SimpleTable(props) {
     </Paper>
   );
 }
-
-SimpleTable.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(SimpleTable);
