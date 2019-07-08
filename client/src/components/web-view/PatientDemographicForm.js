@@ -1,8 +1,9 @@
 import React from 'react';
 
-import DrugMonitoringTabs from './DugMonitoringTabs';
+import DosingGuidanceTable from './DosingGuidanceTable';
 
 import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField'
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
@@ -25,15 +26,54 @@ const useStyles = makeStyles(theme => ({
 function getSteps() {
   return ['Medication', 'Indication', 'Key Demographics'];
 }
+const handleChange = name => event => {
+};
 
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return 'Select campaign settings...';
+      return (
+        <TextField
+          id="medicationName"
+          label="Medication Name"
+          onChange={handleChange}
+          margin="normal"
+        />
+      );
     case 1:
-      return 'What is an ad group anyways?';
+      return (
+        <TextField
+          id="indication"
+          label="Indication"
+          onChange={handleChange}
+          margin="normal"
+        />
+      );
     case 2:
-      return 'This is the bit I really care about!';
+      return (
+        <form noValidate autoComplete="off">
+          <TextField
+            id="age"
+            label="Age"
+            onChange={handleChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            id="bmi"
+            label="BMI"
+            onChange={handleChange}
+            margin="normal"
+          />
+          <br />
+          <TextField
+            id="creatinineClearance"
+            label="Creatinine Clearance"
+            onChange={handleChange}
+            margin="normal"
+          />
+        </form>
+      );
     default:
       return 'Uknown stepIndex';
   }
@@ -70,7 +110,7 @@ export default function PatientDemoForm() {
           <div>
             <Typography className={classes.instructions}>All steps completed</Typography>
             <Button onClick={handleReset}>Reset</Button>
-            <DrugMonitoringTabs/>
+            <DosingGuidanceTable />
           </div>
         ) : (
             <div>
