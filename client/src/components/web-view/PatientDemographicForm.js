@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DosingGuidanceTable from './DosingGuidanceTable';
+import DosingGuidanceSnackBar from './DosingGuidanceSnackbar';
 
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField'
@@ -111,6 +112,7 @@ export default function PatientDemoForm() {
             <Typography className={classes.instructions}>All steps completed</Typography>
             <Button onClick={handleReset}>Reset</Button>
             <DosingGuidanceTable />
+            <DosingGuidanceSnackBar />
           </div>
         ) : (
             <div>
