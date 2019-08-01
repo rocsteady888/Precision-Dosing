@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 
-import { PatientContext } from "../contexts/PatientContext";
-import { MedicationContext } from "../contexts/MedicationContext";
-import { PrecisionDosingContext } from "../contexts/PrecisionDosingContext";
+import { PatientContext } from "../../../contexts/PatientContext";
+import { MedicationContext } from "../../../contexts/MedicationContext";
+import { PrecisionDosingContext } from "../../../contexts/PrecisionDosingContext";
 
 import List from "@material-ui/core/List";
 import Button from "@material-ui/core/Button";

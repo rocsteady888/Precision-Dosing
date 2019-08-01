@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { MedicationContext } from "../../contexts/MedicationContext";
+import { MedicationContext } from "../../../contexts/MedicationContext";
 
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navbar from './components/navigation/Navbar';
-import PatientDemographicForm from './components/web-view/PatientDemographicForm';
+import Navbar from '../../../components/navigation/Navbar';
+import PatientDemographicForm from './PatientDemographicForm';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 

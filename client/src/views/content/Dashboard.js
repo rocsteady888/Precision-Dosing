@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
-import { UserContext } from './contexts/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 
 import Landing from './Landing'
-import PermanentDrawer from './components/ehr-view/PermanentDrawer'
+import PermanentDrawer from '../user-views/ehr-view/PermanentDrawer'
 
 const styles = theme => ({
   root: {

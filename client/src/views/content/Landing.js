@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
-import { UserContext } from "./contexts/UserContext";
+import { UserContext } from "../../contexts/UserContext";
 import { withStyles } from "@material-ui/core/styles";
-import infoCard1 from "./images/adult-agreement-beard-541522.jpg";
-import infoCard2 from "./images/asphalt-blur-car-290470.jpg";
-import infoCard3 from "./images/action-blur-city-590701.jpg";
+import infoCard1 from "../../images/adult-agreement-beard-541522.jpg";
+import infoCard2 from "../../images/asphalt-blur-car-290470.jpg";
+import infoCard3 from "../../images/action-blur-city-590701.jpg";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
 import Card from "@material-ui/core/Card";
