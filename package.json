@@ -1,8 +1,8 @@
 {
   "name": "precision-dosing",
   "engines": {
-    "node": "^6.9",
-    "yarn": "^0.21"
+    "node": "^10.15",
+    "yarn": "^1.17"
   },
   "version": "1.0.0",
   "description": "This react app is meant to be a wireframe for future development.",
